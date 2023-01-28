@@ -16,3 +16,4 @@ rootProject.name = "Advanced Android Bootcamp"
 include ':app'
 include ':DataBinding'
 include ':DataBinding2'
+include ':DataBinding3'
