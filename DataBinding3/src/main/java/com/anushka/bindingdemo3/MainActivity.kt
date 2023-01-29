@@ -15,6 +15,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getStudent():Student{
-        return Student(1,"Alex","alex@gmail.com")
+        return Student(1,"Viva","Viva@gmail.com")
     }
 }
