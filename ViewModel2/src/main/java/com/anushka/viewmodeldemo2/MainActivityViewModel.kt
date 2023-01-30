@@ -10,6 +10,6 @@ class MainActivityViewModel : ViewModel() {
     }
 
     fun setTotal(input:Int){
-        total +=input
+        total += input
     }
 }
