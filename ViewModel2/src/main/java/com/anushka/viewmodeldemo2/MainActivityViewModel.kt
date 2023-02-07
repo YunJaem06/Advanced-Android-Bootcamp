@@ -9,11 +9,16 @@ class MainActivityViewModel(startingTotal : Int) : ViewModel() {
     val totalData : LiveData<Int>
     get() = total
 
+    var inputText = MutableLiveData<String>()
+
     init {
         total.value = startingTotal
     }
 
-    fun setTotal(input:Int){
-        total.value = (total.value)?.plus(input)
+    fun setTotal(){
+        var intInput : Int = inputText.value!!.toInt()
+        total.value = (total.value)?.plus(intInput)
+
+        inputText.value = ""
     }
 }
