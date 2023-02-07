@@ -16,7 +16,7 @@ class MainActivityViewModel(startingTotal : Int) : ViewModel() {
     }
 
     fun setTotal(){
-        var intInput : Int = inputText.value!!.toInt()
+        val intInput : Int = inputText.value!!.toInt()
         total.value = (total.value)?.plus(intInput)
 
         inputText.value = ""
