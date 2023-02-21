@@ -39,7 +39,11 @@
         android:id="@+id/welcomeFragment"
         android:name="com.anushka.navdemo5.WelcomeFragment"
         android:label="WelcomeFragment"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_termsFragment"
+            app:destination="@id/termsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/termsFragment"
         android:name="com.anushka.navdemo5.TermsFragment"
