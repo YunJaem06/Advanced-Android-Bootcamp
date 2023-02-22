@@ -51,7 +51,7 @@
             android:id="@+id/view_terms_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="View Terms"
+            android:text="약관 확인"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
