@@ -7,28 +7,30 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class MyRecyclerViewAdapter(private val fruitsList:List<Fruit>, private val clickListener:(Fruit)->Unit) : RecyclerView.Adapter<MyViewHolder>(){
+class MyRecyclerViewAdapter(
+    private val fruitsList: List<Fruit>,
+    private val clickListener: (Fruit) -> Unit) : RecyclerView.Adapter<MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val listItem = layoutInflater.inflate(R.layout.list_item,parent,false)
+        val listItem = layoutInflater.inflate(R.layout.list_item, parent, false)
         return MyViewHolder(listItem)
 
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-     val fruit = fruitsList[position]
-     holder.bind(fruit,clickListener)
+        val fruit = fruitsList[position]
+        holder.bind(fruit, clickListener)
     }
 
     override fun getItemCount(): Int {
-       return fruitsList.size
+        return fruitsList.size
     }
 
 }
 
-class MyViewHolder(val view: View):RecyclerView.ViewHolder(view){
-    fun bind(fruit: Fruit, clickListener:(Fruit)->Unit) {
+class MyViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    fun bind(fruit: Fruit, clickListener: (Fruit) -> Unit) {
         val myTextView = view.findViewById<TextView>(R.id.tvName)
         myTextView.text = fruit.name
 
