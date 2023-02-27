@@ -23,20 +23,28 @@ class MainActivity : AppCompatActivity() {
         btnCount = findViewById(R.id.btnCount)
         tvCount = findViewById(R.id.tvCount)
 
-        btnCount.setOnClickListener {
-            tvCount.text = count++.toString()
-        }
-        btnDownloadUserData.setOnClickListener {
+//        btnCount.setOnClickListener {
+//            tvCount.text = count++.toString()
+//        }
+//        btnDownloadUserData.setOnClickListener {
+//
+//            CoroutineScope(Dispatchers.IO).launch {
+//                downloadUserData()
+//            }
+//        }
 
-            CoroutineScope(Dispatchers.IO).launch {
-                downloadUserData()
-            }
+        CoroutineScope(Dispatchers.IO).launch {
+            Log.i("MyTag", "Hello from ${Thread.currentThread().name}")
         }
+        CoroutineScope(Dispatchers.Main).launch {
+            Log.i("MyTag", "Hello from ${Thread.currentThread().name}")
+        }
+
     }
 
-    private fun downloadUserData() {
-        for (i in 1..200000) {
-            Log.i("MyTag", "Downloading user $i in ${Thread.currentThread().name}")
-        }
-    }
+//    private fun downloadUserData() {
+//        for (i in 1..200000) {
+//            Log.i("MyTag", "Downloading user $i in ${Thread.currentThread().name}")
+//        }
+//    }
 }
