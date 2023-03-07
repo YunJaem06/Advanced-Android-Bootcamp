@@ -8,10 +8,10 @@ import com.anushka.roomdemo.databinding.ListItemBinding
 import com.anushka.roomdemo.db.Subscriber
 import com.anushka.roomdemo.generated.callback.OnClickListener
 
-class MyRecyclerViewAdapter(
-    private val subscribersList: List<Subscriber>,
-    private val clickListener: (Subscriber) -> Unit
+class MyRecyclerViewAdapter(private val clickListener: (Subscriber) -> Unit
 ) : RecyclerView.Adapter<MyViewHolder>() {
+
+    private val subscribersList = ArrayList<Subscriber>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -22,6 +22,11 @@ class MyRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(subscribersList[position], clickListener)
+    }
+
+    fun setList(subscriber: List<Subscriber>){
+        subscribersList.clear()
+        subscribersList.addAll(subscriber)
     }
 
     override fun getItemCount(): Int {
