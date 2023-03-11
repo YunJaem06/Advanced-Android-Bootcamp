@@ -1,16 +1,16 @@
-package com.anushka.roomdemo
+package com.anushka.roomdemo.ViewModel
 
 import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.anushka.roomdemo.Event
 import com.anushka.roomdemo.db.Subscriber
 import com.anushka.roomdemo.db.SubscriberRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import kotlin.math.E
 
 class SubscriberViewModel(private val repository: SubscriberRepository) : ViewModel() {
 

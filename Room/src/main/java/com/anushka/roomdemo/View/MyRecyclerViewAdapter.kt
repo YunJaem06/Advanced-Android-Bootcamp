@@ -1,12 +1,12 @@
-package com.anushka.roomdemo
+package com.anushka.roomdemo.View
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.anushka.roomdemo.R
 import com.anushka.roomdemo.databinding.ListItemBinding
 import com.anushka.roomdemo.db.Subscriber
-import com.anushka.roomdemo.generated.callback.OnClickListener
 
 class MyRecyclerViewAdapter(private val clickListener: (Subscriber) -> Unit
 ) : RecyclerView.Adapter<MyViewHolder>() {

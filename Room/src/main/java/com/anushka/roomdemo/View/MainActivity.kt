@@ -1,4 +1,4 @@
-package com.anushka.roomdemo
+package com.anushka.roomdemo.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +8,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.anushka.roomdemo.R
+import com.anushka.roomdemo.ViewModel.SubscriberViewModel
+import com.anushka.roomdemo.ViewModel.SubscriberViewModelFactory
 import com.anushka.roomdemo.databinding.ActivityMainBinding
 import com.anushka.roomdemo.db.Subscriber
 import com.anushka.roomdemo.db.SubscriberDatabase

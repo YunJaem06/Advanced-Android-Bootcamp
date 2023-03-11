@@ -6,7 +6,7 @@
     <data>
         <variable
             name="myViewModel"
-            type="com.anushka.roomdemo.SubscriberViewModel" />
+            type="com.anushka.roomdemo.ViewModel.SubscriberViewModel" />
     </data>
 
     <LinearLayout
@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:layout_margin="15dp"
         android:orientation="vertical"
-        tools:context=".MainActivity">
+        tools:context=".View.MainActivity">
 
         <EditText
             android:id="@+id/name_text"
