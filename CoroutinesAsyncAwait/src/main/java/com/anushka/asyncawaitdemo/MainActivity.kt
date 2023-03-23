@@ -17,30 +17,30 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         CoroutineScope(Main).launch {
-            Log.i("MyTag", "Calculation started...")
+            Log.i("MyTag", "시작...")
 
             val stock1 = async(IO) {
-                getStock1()
+                get1()
             }
 
             val stock2 = async(IO) {
-                getStock2()
+                get2()
             }
 
             val total = stock1.await() + stock2.await()
-            Toast.makeText(applicationContext, "Total is $total", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "총 $total", Toast.LENGTH_SHORT).show()
         }
     }
 }
 
-private suspend fun getStock1() : Int {
+private suspend fun get1() : Int {
     delay(10000)
-    Log.i("MyTag", " stock 1 returned ")
+    Log.i("MyTag", " 1번 끝 ")
     return 55000
 }
 
-private suspend fun getStock2() : Int {
+private suspend fun get2() : Int {
     delay(8000)
-    Log.i("MyTag", " stock 2 returned ")
+    Log.i("MyTag", " 2번 끝 ")
     return 35000
 }

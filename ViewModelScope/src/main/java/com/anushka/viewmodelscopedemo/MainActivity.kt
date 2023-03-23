@@ -13,11 +13,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mainActivityViewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
+        mainActivityViewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
         mainActivityViewModel.getUserData()
         mainActivityViewModel.users.observe(this, Observer { myUsers->
             myUsers.forEach{
-                Log.i("MyTag", "naem is ${it.name}")
+                Log.i("MyTag", "커피 이름은 ${it.name}")
             }
         })
     }
