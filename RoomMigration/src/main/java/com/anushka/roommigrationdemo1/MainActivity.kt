@@ -24,9 +24,8 @@ class MainActivity : AppCompatActivity() {
         binding.btnSubmit.setOnClickListener {
             lifecycleScope.launch {
                 binding.etName.text.let {
-                    dao.insertStudent(Student(0,it.toString(), binding.etEmail.text.toString(), binding.etCourse.text.toString()))
+                    dao.insertStudent(Student(0,it.toString(),binding.etCourse.text.toString()))
                     binding.etName.setText("")
-                    binding.etEmail.setText("")
                     binding.etCourse.setText("")
                 }
             }
