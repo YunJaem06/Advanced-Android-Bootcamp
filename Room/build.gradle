@@ -15,6 +15,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        kapt {
+            arguments{
+                arg("room.schemaLocation","$projectDir/schemas")
+            }
+        }
     }
 
     buildTypes {
@@ -36,7 +42,6 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:+'
     def lifecycle_version = "2.5.1"
     def room_version = "2.5.0"
     def coroutines_version = "1.6.4"
