@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getRequestWithPathParameters() {
         val pathResponse : LiveData<Response<AlbumsItem>> = liveData {
-            var response = retService.getAlbum(3)
+            val response = retService.getAlbum(3)
             emit(response)
         }
 
