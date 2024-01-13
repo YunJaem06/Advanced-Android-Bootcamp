@@ -44,6 +44,33 @@ class MainActivity : AppCompatActivity() {
             PendingIntent.FLAG_UPDATE_CURRENT
         )
 
+        val intent2 = Intent(this, DetailActivity::class.java)
+
+        val pendingIntent2 : PendingIntent = PendingIntent.getActivity(
+            this,
+            0,
+            intent2,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
+
+        // 알림의 상세
+        val action2 : NotificationCompat.Action =
+            NotificationCompat.Action.Builder(0, "Detail", pendingIntent2).build()
+
+        // 설정
+        val intent3 = Intent(this, SettingActivity::class.java)
+
+        val pendingIntent3 : PendingIntent = PendingIntent.getActivity(
+            this,
+            0,
+            intent3,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
+
+        val action3 : NotificationCompat.Action =
+            NotificationCompat.Action.Builder(0, "Setting", pendingIntent3).build()
+
+
         val notification = NotificationCompat.Builder(this@MainActivity,channelID)
             .setContentTitle("Demo Title")
             .setContentText("This is a demo notification")
@@ -51,6 +78,8 @@ class MainActivity : AppCompatActivity() {
             .setAutoCancel(true)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setContentIntent(pendingIntent)
+            .addAction(action2)
+            .addAction(action3)
             .build()
         notificationManager?.notify(notificationId,notification)
 
