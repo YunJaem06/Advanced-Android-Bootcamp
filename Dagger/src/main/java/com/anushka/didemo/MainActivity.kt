@@ -9,5 +9,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        val smartPhone = SmartPhone(Battery(), SIMCard(ServiceProvider()), MemoryCard())
+        smartPhone.makeACallWithRecording()
+
     }
 }
