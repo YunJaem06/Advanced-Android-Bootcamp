@@ -2,8 +2,9 @@ package com.anushka.didemo
 
 import dagger.Component
 
-@Component(modules = [MemoryCardModule::class, NCBatteyModule::class])
+@Component(modules = [MemoryCardModule::class,NCBatteryModule::class])
 interface SmartPhoneComponent {
 
-    fun inject(mainActivity: MainActivity)
+   fun inject(mainActivity: MainActivity)
 }
+

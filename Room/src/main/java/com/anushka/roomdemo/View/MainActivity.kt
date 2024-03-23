@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         subscriberViewModel = ViewModelProvider(this, factory)[SubscriberViewModel::class.java]
 
-        binding.myViewModel = subscriberViewModel
+//        binding.myViewModel = subscriberViewModel
         binding.lifecycleOwner = this
 
         initRecyclerView()
